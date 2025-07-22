@@ -4,10 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Restoran Menüsü</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet" />
   <style>
     body {
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
+      font-family: 'Poppins', sans-serif;
       background: #f8f8f8;
       color: #333;
     }
@@ -19,6 +20,8 @@
     }
     h1 {
       margin: 0;
+      font-weight: 600;
+      letter-spacing: 1px;
     }
     .menu-section {
       max-width: 800px;
@@ -29,15 +32,17 @@
       border-bottom: 2px solid #ddd;
       padding-bottom: 0.5rem;
       color: #2c3e50;
+      font-weight: 600;
     }
     .item {
       display: flex;
       justify-content: space-between;
       padding: 0.6rem 0;
       border-bottom: 1px solid #eee;
+      font-weight: 300;
     }
     .item-name {
-      font-weight: bold;
+      font-weight: 600;
     }
     .item-price {
       color: #666;
@@ -70,4 +75,11 @@
 
     <h2>Tatlılar</h2>
     <div class="item"><span class="item-name">Sufle</span><span class="item-price">90 ₺</span></div>
-    <div class="item"><span class="item-name">Tiramisu</span
+    <div class="item"><span class="item-name">Tiramisu</span><span class="item-price">85 ₺</span></div>
+
+    <h2>İçecekler</h2>
+    <div class="item"><span class="item-name">Ev Yapımı Limonata</span><span class="item-price">45 ₺</span></div>
+    <div class="item"><span class="item-name">Türk Kahvesi</span><span class="item-price">35 ₺</span></div>
+  </div>
+</body>
+</html>
