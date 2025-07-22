@@ -2,23 +2,72 @@
 <html lang="tr">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Restoran Menü</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Restoran Menüsü</title>
   <style>
-    body { font-family: sans-serif; padding: 20px; }
-    .menu-item { margin-bottom: 15px; }
-    .price { color: gray; font-size: 0.9em; }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #f8f8f8;
+      color: #333;
+    }
+    header {
+      background-color: #2c3e50;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+    h1 {
+      margin: 0;
+    }
+    .menu-section {
+      max-width: 800px;
+      margin: auto;
+      padding: 1rem;
+    }
+    h2 {
+      border-bottom: 2px solid #ddd;
+      padding-bottom: 0.5rem;
+      color: #2c3e50;
+    }
+    .item {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.6rem 0;
+      border-bottom: 1px solid #eee;
+    }
+    .item-name {
+      font-weight: bold;
+    }
+    .item-price {
+      color: #666;
+    }
+
+    @media (max-width: 600px) {
+      .item {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .item-price {
+        margin-top: 0.3rem;
+      }
+    }
   </style>
 </head>
 <body>
-  <h1>Menü</h1>
-  <div class="menu-item">
-    <strong>Adana Kebap</strong>
-    <div class="price">120 TL</div>
-  </div>
-  <div class="menu-item">
-    <strong>Lahmacun</strong>
-    <div class="price">35 TL</div>
-  </div>
-</body>
-</html>
+  <header>
+    <h1>Lüks Restoran Menüsü</h1>
+  </header>
+
+  <div class="menu-section">
+    <h2>Başlangıçlar</h2>
+    <div class="item"><span class="item-name">Humus</span><span class="item-price">60 ₺</span></div>
+    <div class="item"><span class="item-name">Köz Patlıcan</span><span class="item-price">70 ₺</span></div>
+
+    <h2>Ana Yemekler</h2>
+    <div class="item"><span class="item-name">Dana Antrikot</span><span class="item-price">240 ₺</span></div>
+    <div class="item"><span class="item-name">Izgara Somon</span><span class="item-price">210 ₺</span></div>
+
+    <h2>Tatlılar</h2>
+    <div class="item"><span class="item-name">Sufle</span><span class="item-price">90 ₺</span></div>
+    <div class="item"><span class="item-name">Tiramisu</span
