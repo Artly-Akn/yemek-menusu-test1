@@ -1,93 +1,123 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dondurmacı Menüsü</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dondurma Menüsü</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Open+Sans&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --bg-color: #fffaf5;
+      --text-color: #333;
+      --card-bg: #fff;
+    }
+
+    body.dark {
+      --bg-color: #1c1c1c;
+      --text-color: #f1f1f1;
+      --card-bg: #2a2a2a;
+    }
+
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
-      padding: 0;
-      background-color: #fff9f4;
-      color: #333;
-    }
-    header {
-      background-color: #f67280;
-      color: white;
-      text-align: center;
       padding: 1rem;
-      font-size: 1.5rem;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      font-family: 'Open Sans', sans-serif;
+      transition: all 0.3s ease;
     }
+
+    header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    h1 {
+      font-family: 'Pacifico', cursive;
+      font-size: 2.5rem;
+    }
+
     .menu {
       display: grid;
-      grid-template-columns: 1fr;
-      gap: 1rem;
-      padding: 1rem;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
     }
+
     .item {
-      background-color: #fff;
-      border-radius: 12px;
+      background-color: var(--card-bg);
+      border-radius: 16px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
       overflow: hidden;
       transition: transform 0.2s;
     }
+
     .item:hover {
       transform: scale(1.02);
     }
+
     .item img {
       width: 100%;
-      height: auto;
-      display: block;
+      height: 180px;
+      object-fit: cover;
     }
-    .item-content {
+
+    .info {
       padding: 1rem;
     }
-    .item-content h2 {
-      margin: 0 0 0.5rem 0;
-      font-size: 1.2rem;
+
+    .info h3 {
+      font-family: 'Pacifico', cursive;
+      margin: 0.5rem 0;
     }
-    .item-content p {
-      margin: 0;
-      font-size: 0.95rem;
-      color: #555;
-    }
-    @media(min-width: 600px) {
-      .menu {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-    @media(min-width: 900px) {
-      .menu {
-        grid-template-columns: repeat(3, 1fr);
-      }
+
+    .dark-toggle {
+      margin-top: 1rem;
+      padding: 0.5rem 1rem;
+      border: none;
+      background: #ff8c69;
+      color: white;
+      font-size: 1rem;
+      border-radius: 8px;
+      cursor: pointer;
     }
   </style>
 </head>
 <body>
-  <header>Dondurmacı Menüsü</header>
-  <div class="menu">
+  <header>
+    <h1>Dondurma Menüsü</h1>
+    <button class="dark-toggle" onclick="toggleDark()">🌙 Karanlık Mod</button>
+  </header>
+
+  <section class="menu">
     <div class="item">
-      <img src="https://cdn.pixabay.com/photo/2015/04/08/13/13/ice-cream-712667_1280.jpg" alt="Çilekli Dondurma">
-      <div class="item-content">
-        <h2>Çilekli Dondurma</h2>
-        <p>Taze çileklerle hazırlanan nefis, ferahlatıcı dondurma.</p>
+      <img src="https://cdn.pixabay.com/photo/2017/02/17/17/21/ice-cream-2073515_960_720.jpg" alt="Çilekli Dondurma">
+      <div class="info">
+        <h3>Çilekli Dondurma</h3>
+        <p>Taze çileklerle yapılan, ferahlatıcı klasik tat.</p>
       </div>
     </div>
+
     <div class="item">
-      <img src="https://cdn.pixabay.com/photo/2017/06/02/18/24/ice-cream-2367072_1280.jpg" alt="Çikolatalı Dondurma">
-      <div class="item-content">
-        <h2>Çikolatalı Dondurma</h2>
-        <p>Zengin Belçika çikolatası ile yapılmış yoğun kıvamlı tat.</p>
+      <img src="https://cdn.pixabay.com/photo/2014/10/17/20/34/ice-cream-492850_960_720.jpg" alt="Çikolatalı Dondurma">
+      <div class="info">
+        <h3>Çikolatalı Dondurma</h3>
+        <p>Zengin kakao aromalı, yoğun lezzetli dondurma.</p>
       </div>
     </div>
+
     <div class="item">
-      <img src="https://cdn.pixabay.com/photo/2017/06/30/20/32/ice-cream-2453039_1280.jpg" alt="Vanilyalı Dondurma">
-      <div class="item-content">
-        <h2>Vanilyalı Dondurma</h2>
-        <p>Gerçek vanilya aromasıyla saf ve klasik bir lezzet.</p>
+      <img src="https://cdn.pixabay.com/photo/2016/03/05/19/02/ice-cream-1239304_960_720.jpg" alt="Fıstıklı Dondurma">
+      <div class="info">
+        <h3>Fıstıklı Dondurma</h3>
+        <p>Gerçek Antep fıstığı ile hazırlanmış doğal tat.</p>
       </div>
     </div>
-  </div>
+  </section>
+
+  <script>
+    function toggleDark() {
+      document.body.classList.toggle('dark');
+    }
+  </script>
 </body>
 </html>
