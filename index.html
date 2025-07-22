@@ -1,96 +1,91 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dondurma Menü</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dondurmacı Menüsü</title>
   <style>
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #fdfdfd;
+      background-color: #fff9f4;
       color: #333;
     }
-
     header {
-      background-color: #ffb347;
+      background-color: #f67280;
       color: white;
-      padding: 1rem;
       text-align: center;
-      font-size: 1.5rem;
-      font-weight: bold;
-    }
-
-    .menu {
-      display: flex;
-      flex-direction: column;
       padding: 1rem;
-      gap: 1.5rem;
+      font-size: 1.5rem;
     }
-
+    .menu {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+      padding: 1rem;
+    }
     .item {
       background-color: #fff;
       border-radius: 12px;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
       overflow: hidden;
+      transition: transform 0.2s;
     }
-
+    .item:hover {
+      transform: scale(1.02);
+    }
     .item img {
       width: 100%;
       height: auto;
       display: block;
     }
-
     .item-content {
       padding: 1rem;
     }
-
-    .item-name {
+    .item-content h2 {
+      margin: 0 0 0.5rem 0;
       font-size: 1.2rem;
-      font-weight: 600;
-      margin-bottom: 0.5rem;
     }
-
-    .item-desc {
+    .item-content p {
+      margin: 0;
       font-size: 0.95rem;
-      margin-bottom: 0.5rem;
+      color: #555;
     }
-
-    .item-price {
-      font-size: 1rem;
-      font-weight: bold;
-      color: #d35400;
+    @media(min-width: 600px) {
+      .menu {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media(min-width: 900px) {
+      .menu {
+        grid-template-columns: repeat(3, 1fr);
+      }
     }
   </style>
 </head>
 <body>
-  <header>Dondurma Menü</header>
+  <header>Dondurmacı Menüsü</header>
   <div class="menu">
     <div class="item">
-      <img src="https://images.unsplash.com/photo-1589712235273-f2a5a1f799b2" alt="Çikolatalı Dondurma">
+      <img src="https://cdn.pixabay.com/photo/2015/04/08/13/13/ice-cream-712667_1280.jpg" alt="Çilekli Dondurma">
       <div class="item-content">
-        <div class="item-name">Çikolatalı Dondurma</div>
-        <div class="item-desc">Yoğun çikolata tadıyla klasik lezzet.</div>
-        <div class="item-price">45 ₺</div>
+        <h2>Çilekli Dondurma</h2>
+        <p>Taze çileklerle hazırlanan nefis, ferahlatıcı dondurma.</p>
       </div>
     </div>
-
     <div class="item">
-      <img src="https://images.unsplash.com/photo-1593804631041-546d084d7b47" alt="Vanilyalı Dondurma">
+      <img src="https://cdn.pixabay.com/photo/2017/06/02/18/24/ice-cream-2367072_1280.jpg" alt="Çikolatalı Dondurma">
       <div class="item-content">
-        <div class="item-name">Vanilyalı Dondurma</div>
-        <div class="item-desc">Doğal vanilya aromalı hafif ve serinletici.</div>
-        <div class="item-price">42 ₺</div>
+        <h2>Çikolatalı Dondurma</h2>
+        <p>Zengin Belçika çikolatası ile yapılmış yoğun kıvamlı tat.</p>
       </div>
     </div>
-
     <div class="item">
-      <img src="https://images.unsplash.com/photo-1551024601-bec78aea704b" alt="Çilekli Dondurma">
+      <img src="https://cdn.pixabay.com/photo/2017/06/30/20/32/ice-cream-2453039_1280.jpg" alt="Vanilyalı Dondurma">
       <div class="item-content">
-        <div class="item-name">Çilekli Dondurma</div>
-        <div class="item-desc">Taze çilek parçalarıyla ferahlatıcı bir tat.</div>
-        <div class="item-price">43 ₺</div>
+        <h2>Vanilyalı Dondurma</h2>
+        <p>Gerçek vanilya aromasıyla saf ve klasik bir lezzet.</p>
       </div>
     </div>
   </div>
