@@ -1,175 +1,98 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Restoran Menüsü - Filtre & Karanlık Mod</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet" />
-<style>
-  body {
-    margin:0; 
-    font-family: 'Poppins', sans-serif;
-    background: #f8f8f8;
-    color: #333;
-    transition: background-color 0.3s, color 0.3s;
-  }
-  body.dark {
-    background: #121212;
-    color: #eee;
-  }
-  header {
-    background-color: #2c3e50;
-    color: white;
-    padding: 1rem;
-    text-align: center;
-  }
-  h1 {
-    margin: 0;
-    font-weight: 600;
-    letter-spacing: 1px;
-  }
-  .controls {
-    max-width: 800px;
-    margin: 1rem auto;
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    flex-wrap: wrap;
-  }
-  .btn {
-    background-color: #2c3e50;
-    color: white;
-    border: none;
-    padding: 0.5rem 1rem;
-    font-weight: 600;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-  }
-  .btn:hover {
-    background-color: #1a2738;
-  }
-  .menu-section {
-    max-width: 800px;
-    margin: auto;
-    padding: 1rem;
-  }
-  h2 {
-    border-bottom: 2px solid #ddd;
-    padding-bottom: 0.5rem;
-    color: #2c3e50;
-    font-weight: 600;
-  }
-  body.dark h2 {
-    border-color: #444;
-    color: #ddd;
-  }
-  .item {
-    display: flex;
-    justify-content: space-between;
-    padding: 0.6rem 0;
-    border-bottom: 1px solid #eee;
-    font-weight: 300;
-    transition: background-color 0.3s;
-  }
-  .item-name {
-    font-weight: 600;
-  }
-  .item-price {
-    color: #666;
-  }
-  body.dark .item-price {
-    color: #aaa;
-  }
-  .item:hover {
-    background-color: #e0e0e0;
-  }
-  body.dark .item:hover {
-    background-color: #222;
-  }
-  @media (max-width: 600px) {
-    .item {
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dondurma Menü</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fdfdfd;
+      color: #333;
+    }
+
+    header {
+      background-color: #ffb347;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .menu {
+      display: flex;
       flex-direction: column;
-      align-items: flex-start;
+      padding: 1rem;
+      gap: 1.5rem;
     }
+
+    .item {
+      background-color: #fff;
+      border-radius: 12px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+    }
+
+    .item img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .item-content {
+      padding: 1rem;
+    }
+
+    .item-name {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .item-desc {
+      font-size: 0.95rem;
+      margin-bottom: 0.5rem;
+    }
+
     .item-price {
-      margin-top: 0.3rem;
+      font-size: 1rem;
+      font-weight: bold;
+      color: #d35400;
     }
-  }
-</style>
+  </style>
 </head>
 <body>
-  <header>
-    <h1>Lüks Restoran Menüsü</h1>
-  </header>
-
-  <div class="controls">
-    <button class="btn" data-filter="all">Tümü</button>
-    <button class="btn" data-filter="baslangic">Başlangıçlar</button>
-    <button class="btn" data-filter="ana">Ana Yemekler</button>
-    <button class="btn" data-filter="tatli">Tatlılar</button>
-    <button class="btn" data-filter="icecek">İçecekler</button>
-    <button class="btn" id="toggleTheme">Karanlık Mod</button>
-  </div>
-
-  <div class="menu-section">
-    <h2>Başlangıçlar</h2>
-    <div class="item" data-category="baslangic">
-      <span class="item-name">Humus</span><span class="item-price">60 ₺</span>
-    </div>
-    <div class="item" data-category="baslangic">
-      <span class="item-name">Köz Patlıcan</span><span class="item-price">70 ₺</span>
+  <header>Dondurma Menü</header>
+  <div class="menu">
+    <div class="item">
+      <img src="https://images.unsplash.com/photo-1589712235273-f2a5a1f799b2" alt="Çikolatalı Dondurma">
+      <div class="item-content">
+        <div class="item-name">Çikolatalı Dondurma</div>
+        <div class="item-desc">Yoğun çikolata tadıyla klasik lezzet.</div>
+        <div class="item-price">45 ₺</div>
+      </div>
     </div>
 
-    <h2>Ana Yemekler</h2>
-    <div class="item" data-category="ana">
-      <span class="item-name">Dana Antrikot</span><span class="item-price">240 ₺</span>
-    </div>
-    <div class="item" data-category="ana">
-      <span class="item-name">Izgara Somon</span><span class="item-price">210 ₺</span>
-    </div>
-
-    <h2>Tatlılar</h2>
-    <div class="item" data-category="tatli">
-      <span class="item-name">Sufle</span><span class="item-price">90 ₺</span>
-    </div>
-    <div class="item" data-category="tatli">
-      <span class="item-name">Tiramisu</span><span class="item-price">85 ₺</span>
+    <div class="item">
+      <img src="https://images.unsplash.com/photo-1593804631041-546d084d7b47" alt="Vanilyalı Dondurma">
+      <div class="item-content">
+        <div class="item-name">Vanilyalı Dondurma</div>
+        <div class="item-desc">Doğal vanilya aromalı hafif ve serinletici.</div>
+        <div class="item-price">42 ₺</div>
+      </div>
     </div>
 
-    <h2>İçecekler</h2>
-    <div class="item" data-category="icecek">
-      <span class="item-name">Ev Yapımı Limonata</span><span class="item-price">45 ₺</span>
-    </div>
-    <div class="item" data-category="icecek">
-      <span class="item-name">Türk Kahvesi</span><span class="item-price">35 ₺</span>
+    <div class="item">
+      <img src="https://images.unsplash.com/photo-1551024601-bec78aea704b" alt="Çilekli Dondurma">
+      <div class="item-content">
+        <div class="item-name">Çilekli Dondurma</div>
+        <div class="item-desc">Taze çilek parçalarıyla ferahlatıcı bir tat.</div>
+        <div class="item-price">43 ₺</div>
+      </div>
     </div>
   </div>
-
-<script>
-  const buttons = document.querySelectorAll('.btn[data-filter]');
-  const items = document.querySelectorAll('.item');
-
-  buttons.forEach(button => {
-    button.addEventListener('click', () => {
-      const filter = button.getAttribute('data-filter');
-      if(filter === 'all'){
-        items.forEach(item => item.style.display = 'flex');
-      } else {
-        items.forEach(item => {
-          item.style.display = item.getAttribute('data-category') === filter ? 'flex' : 'none';
-        });
-      }
-    });
-  });
-
-  // Karanlık mod toggle
-  const toggleThemeBtn = document.getElementById('toggleTheme');
-  toggleThemeBtn.addEventListener('click', () => {
-    document.body.classList.toggle('dark');
-    toggleThemeBtn.textContent = document.body.classList.contains('dark') ? 'Açık Mod' : 'Karanlık Mod';
-  });
-</script>
-
 </body>
 </html>
