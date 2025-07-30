@@ -2,152 +2,113 @@
 <html lang="tr">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Melek Garden – Serpme Kahvaltı</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Melek Garden Menü</title>
   <style>
-    :root {
-      --main-color: #556B2F;
-      --accent-color: #A9BA9D;
-      --bg-color: #fdfdf9;
-      --text-color: #333;
-      --card-bg: #fff;
-    }
-
     body {
+      margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      background-color: var(--bg-color);
-      color: var(--text-color);
-      margin: 0;
-      padding: 1.5rem;
-      line-height: 1.6;
+      background-color: #fdfbf7;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem;
     }
 
-    header {
+    h1 {
       text-align: center;
-      padding-bottom: 2rem;
-    }
-
-    header h1 {
-      font-size: 2.4rem;
-      color: var(--main-color);
-      margin-bottom: 0.3rem;
-    }
-
-    header p {
-      font-size: 1rem;
-      color: #777;
-    }
-
-    .section {
-      background-color: var(--card-bg);
-      padding: 1.5rem;
-      border-radius: 16px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
       margin-bottom: 2rem;
+      font-size: 2.5rem;
+      color: #2e4e2c;
     }
 
-    .section h2 {
-      border-left: 5px solid var(--main-color);
-      padding-left: 0.6rem;
-      margin-bottom: 1rem;
-      font-size: 1.3rem;
+    .table-container {
+      position: relative;
+      width: 800px;
+      height: 800px;
+      background: url('masatemplate.jpg') no-repeat center/contain;
     }
 
-    ul {
-      padding-left: 1.2rem;
-      margin: 0;
+    .dish {
+      position: absolute;
+      transition: filter 0.3s;
+      cursor: pointer;
     }
 
-    ul li {
-      margin-bottom: 0.5rem;
+    .dish img {
+      width: 100px;
+      border-radius: 50%;
+      border: 3px solid #2e4e2c;
     }
 
-    .hot-items {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 1.2rem;
-      margin-top: 1rem;
-    }
-
-    .item-card {
-      background-color: #fff;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 3px 8px rgba(0,0,0,0.08);
-      transition: transform 0.2s ease;
-    }
-
-    .item-card:hover {
-      transform: scale(1.02);
-    }
-
-    .item-card img {
-      width: 100%;
-      height: 160px;
-      object-fit: cover;
-    }
-
-    .item-card h3 {
-      font-size: 1.1rem;
-      margin: 0.8rem 0 0.3rem;
-      text-align: center;
-      color: var(--main-color);
-    }
-
-    .item-card p {
+    .dish span {
+      display: block;
+      margin-top: 5px;
       font-size: 0.9rem;
-      padding: 0 1rem 1rem;
+      color: #2e4e2c;
       text-align: center;
-      color: #555;
     }
 
-    footer {
-      text-align: center;
-      font-size: 0.8rem;
-      color: #aaa;
-      padding-top: 2rem;
+    .dish.inactive img {
+      filter: grayscale(100%);
+      border-color: #999;
+    }
+
+    .central-options {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: #fff;
+      border-radius: 50%;
+      width: 160px;
+      height: 160px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      font-size: 0.9rem;
+    }
+
+    .central-options select {
+      padding: 5px;
+      font-size: 1rem;
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Melek Garden</h1>
-    <p>Doğayla iç içe, sade ama şık bir kahvaltı deneyimi</p>
-  </header>
-
-  <section class="section">
-    <h2>Serpme Kahvaltı</h2>
-    <ul>
-      <li>Çeşitli Ekmekler (Simit, Köy Ekmeği, Kepekli)</li>
-      <li>Poğaça ve Sıcaklar</li>
-      <li>Peynir Tabağı (5 Çeşit)</li>
-      <li>Zeytin Çeşitleri</li>
-      <li>Domates & Salatalık</li>
-      <li>Bal, Reçel, Kaymak</li>
-      <li>Tereyağı & Süt</li>
-      <li>Patates Kızartması</li>
-      <li>Sınırsız Çay</li>
-    </ul>
-  </section>
-
-  <section class="section">
-    <h2>Sıcaklar</h2>
-    <div class="hot-items">
-      <div class="item-card">
-        <img src="https://cdn.yemek.com/mnresize/1250/833/uploads/2021/03/menemen-yemekcom.jpg" alt="Menemen">
-        <h3>Menemen</h3>
-        <p>Yumurta, biber ve domatesin uyumuyla hazırlanır</p>
-      </div>
-      <div class="item-card">
-        <img src="https://cdn.yemek.com/mnresize/1250/833/uploads/2015/06/sucuklu-yumurta-yemekcom.jpg" alt="Sucuklu Yumurta">
-        <h3>Sucuklu Yumurta</h3>
-        <p>Izgara sucuk dilimleriyle zenginleşmiş kahvaltılık</p>
-      </div>
+  <h1>Melek Garden Kahvaltı Menüsü</h1>
+  <div class="table-container">
+    <div class="dish" style="top: 10%; left: 20%;" onclick="toggleDish(this)">
+      <img src="bal.jpg" alt="Bal">
+      <span>Bal</span>
     </div>
-  </section>
+    <div class="dish" style="top: 10%; left: 60%;" onclick="toggleDish(this)">
+      <img src="menemen.jpg" alt="Güveçte Menemen">
+      <span>Menemen</span>
+    </div>
+    <div class="dish" style="top: 40%; left: 80%;" onclick="toggleDish(this)">
+      <img src="simit.jpg" alt="Simit">
+      <span>Simit</span>
+    </div>
+    <!-- Diğer yemekler buraya eklenecek -->
 
-  <footer>
-    Bu dijital menü Farisoft tarafından hazırlanmıştır. 
-  </footer>
+    <div class="central-options">
+      <label for="ana">Ana Yemek</label>
+      <select id="ana">
+        <option>Menemen</option>
+        <option>Rulo Börek</option>
+        <option>Gözleme</option>
+        <option>Patates Kızartması</option>
+      </select>
+    </div>
+  </div>
+
+  <script>
+    function toggleDish(element) {
+      element.classList.toggle('inactive');
+    }
+  </script>
 </body>
 </html>
